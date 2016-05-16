@@ -22,6 +22,11 @@ class Match
     return Match.map_items(sql)
   end
 
+  def teams()
+    sql = "SELECT * FROM teams WHERE id = #{@home_team_id} OR id = #{@away_team_id}"
+    return Team.map_items(sql)
+  end
+
   def self.delete_all()
     sql = "DELETE FROM matches"
     SqlRunner.run(sql)

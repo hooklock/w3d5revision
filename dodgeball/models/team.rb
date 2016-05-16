@@ -25,10 +25,10 @@ class Team
     SqlRunner.run(sql)
   end
 
-  # def matches()
-  #   sql = "SELECT * FROM matches WHERE home_team_id = #{@id} OR away_team_id = #{@id}"
-  #   return Match.map_items(sql)
-  # end
+  def matches()
+    sql = "SELECT * FROM matches WHERE home_team_id = #{@id} OR away_team_id = #{@id}"
+    return Match.map_items(sql)
+  end
 
   def self.map_items(sql)
     teams = SqlRunner.run(sql)
